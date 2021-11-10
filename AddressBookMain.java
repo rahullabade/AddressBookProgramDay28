@@ -1,19 +1,60 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class AddressBookMain {
+    public static String userInput() {
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.nextLine();
+        return string;
+    }
 
     public static void main(String[] args) {
-	System.out.println("Welcome to AddressBook Program");
 
-        PersonDetails person = new PersonDetails();
-        person.Name("Rahul");
-        person.LastName("Labade");
-        person.Address("Shivaji Nagar");
-        person.City("Nagpur");
-        person.State("MP");
-        person.Zip(465123);
-        person.PhoneNumber("789456133");
-        person.Email("rahulgha05@gmail.com");
-        System.out.println(person.toString());
+        System.out.println("Welcome to Address Book Program");
+
+        ArrayList<String> addressList = new ArrayList<>();
+
+        PersonDetails personOne = new PersonDetails();
+        System.out.println("Please Enter the Name :");
+        personOne.setFirstName(userInput());
+        System.out.println("Please Enter Last Name : ");
+        personOne.setLastName(userInput());
+        System.out.println("Please Enter Address : ");
+        personOne.setAddress(userInput());
+        System.out.println("Please Enter City : ");
+        personOne.setCity(userInput());
+        System.out.println("Please Enter State : ");
+        personOne.setState(userInput());
+        System.out.println("Please Enter Zip Code : ");
+        personOne.setZipCode(userInput());
+        System.out.println("Please Enter Phone Number : ");
+        personOne.setPhoneNumber(userInput());
+        System.out.println("Please Enter Email : ");
+        personOne.setEmail(userInput());
+        System.out.println(personOne);
+
+        System.out.println("Enter the Second Person Details");
+
+        PersonDetails personTwo = new PersonDetails();
+        System.out.println("Please Enter the Name :");
+        personTwo.setFirstName(userInput());
+        System.out.println("Please Enter Last Name : ");
+        personTwo.setLastName(userInput());
+        System.out.println("Please Enter Address : ");
+        personTwo.setAddress(userInput());
+        System.out.println("Please Enter City : ");
+        personTwo.setCity(userInput());
+        System.out.println("Please Enter State : ");
+        personTwo.setState(userInput());
+        System.out.println("Please Enter Zip Code : ");
+        personTwo.setZipCode(userInput());
+        System.out.println("Please Enter Phone Number : ");
+        personTwo.setPhoneNumber(userInput());
+        System.out.println("Please Enter Email : ");
+        personTwo.setEmail(userInput());
+        System.out.println(personTwo);
+
     }
 }
