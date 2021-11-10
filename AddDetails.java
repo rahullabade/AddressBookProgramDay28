@@ -7,7 +7,7 @@ public class AddDetails {
     Scanner scanDetails = new Scanner(System.in);
     ArrayList<PersonDetail> contactDetails = new ArrayList<PersonDetail>();
 
-    //edit method use to edit the data.
+    // Edit method use to edit the data.
     public void editContact(ArrayList<PersonDetail> contactDetails) {
         String data = scanDetails.nextLine();
         int index = contactDetails.indexOf(data);
@@ -74,6 +74,18 @@ public class AddDetails {
                         break;
                 }
             }
+        }
+    }
+    // Delete method use to delete the data.
+    public void deleteContact(ArrayList<PersonDetail> contatctDetails) {
+        System.out.println("Enter The Name");
+        String data = scanDetails.nextLine();
+        for (int i = 0; i < contatctDetails.size(); i++) {
+            if (contatctDetails.get(i).getFirstName().equals(data)) {
+                contatctDetails.remove(i);
+
+            } else
+                System.out.println("not match any details");
         }
     }
 }

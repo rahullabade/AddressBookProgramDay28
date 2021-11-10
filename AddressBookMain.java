@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBookMain {
+    // we create an object from the ArrayList named contact.
     static ArrayList<PersonDetail> contact = new ArrayList<PersonDetail>();
     public static Scanner scanner = new Scanner(System.in);
     static int menu;
@@ -57,8 +58,11 @@ public class AddressBookMain {
 
                 case 2:
                     System.out.println("Enter First Name of contact that you would like to edit: ");
-                    // Character input
                     addPersonDetail.editContact(contact);
+                    break;
+
+                case 3:
+                    addPersonDetail.deleteContact(contact);
                     break;
 
                 default:
