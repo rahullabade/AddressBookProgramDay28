@@ -83,7 +83,6 @@ public class AddDetails {
         for (int i = 0; i < contatctDetails.size(); i++) {
             if (contatctDetails.get(i).getFirstName().equals(data)) {
                 contatctDetails.remove(i);
-
             } else
                 System.out.println("not match any details");
         }
