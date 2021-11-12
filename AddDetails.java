@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Hashtable;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class AddDetails {
@@ -116,5 +113,11 @@ public class AddDetails {
             totalNumberOfCount = (int) (totalNumberOfCount + numberOfCity.stream().count());
         }
         System.out.println("Total number of counted by added city or state " + totalNumberOfCount);
+    }
+
+    public void sortFirstName(Hashtable<Integer, ArrayList<PersonDetail>> sortedDetails) {
+        for (int i = 1; i <= sortedDetails.size(); i++) {
+            System.out.println(sortedDetails.get(i).stream().sorted(Comparator.comparing(PersonDetail::getFirstName)).collect(Collectors.toList()));
+        }
     }
 }
