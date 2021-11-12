@@ -94,8 +94,15 @@ public class AddressBookMain {
             System.out.println(hashTable.get(i));
         }
         addPersonDetail.searchDetails(hashTable);
+        System.out.println();
         System.out.println("After sorting the FirstName ");
         addPersonDetail.sortFirstName(hashTable);
+        System.out.println();
+        System.out.println("After sorting the City ");
+        addPersonDetail.sortCity(hashTable);
+        System.out.println();
+        System.out.println("After sorting the ZipCode ");
+        addPersonDetail.sortZipCode(hashTable);
         {
             System.out.println("Goodbye!");
             System.out.println();

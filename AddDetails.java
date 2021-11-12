@@ -120,4 +120,16 @@ public class AddDetails {
             System.out.println(sortedDetails.get(i).stream().sorted(Comparator.comparing(PersonDetail::getFirstName)).collect(Collectors.toList()));
         }
     }
+
+    public void sortCity(Hashtable<Integer, ArrayList<PersonDetail>> sortedDetails) {
+        for (int i = 1; i <= sortedDetails.size(); i++) {
+            System.out.println(sortedDetails.get(i).stream().sorted(Comparator.comparing(PersonDetail::getCity)).collect(Collectors.toList()));
+        }
+    }
+
+    public void sortZipCode(Hashtable<Integer, ArrayList<PersonDetail>> sortedDetails) {
+        for (int i = 1; i <= sortedDetails.size(); i++) {
+            System.out.println(sortedDetails.get(i).stream().sorted(Comparator.comparing(PersonDetail::getZipCode)).collect(Collectors.toList()));
+        }
+    }
 }
