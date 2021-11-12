@@ -95,18 +95,18 @@ public class AddressBookMain {
             System.out.println(hashTable.get(i));
         }
         System.out.println();
-        System.out.println("Reading AddressBook from File");
+        System.out.println("Reading AddressBook From File");
         addPersonDetail.readFromFile();
         System.out.println();
         addPersonDetail.searchDetails(hashTable);
         System.out.println();
-        System.out.println("After sorting the FirstName ");
+        System.out.println("After Sorting The FirstName ");
         addPersonDetail.sortFirstName(hashTable);
         System.out.println();
-        System.out.println("After sorting the City ");
+        System.out.println("After Sorting The City ");
         addPersonDetail.sortCity(hashTable);
         System.out.println();
-        System.out.println("After sorting the ZipCode ");
+        System.out.println("After Sorting The ZipCode ");
         addPersonDetail.sortZipCode(hashTable);
         {
             System.out.println("Goodbye!");
