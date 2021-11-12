@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class AddDetails {
     Scanner scanDetails = new Scanner(System.in);
+    AddressBookMain Details = new AddressBookMain();
 
     // Edit method use to edit the data.
     public void editContact(ArrayList<PersonDetail> contactDetails) {
@@ -81,15 +82,20 @@ public class AddDetails {
     }
 
     // Delete method use to delete the data.
-    public void deleteContact(ArrayList<PersonDetail> contatctDetails) {
+    public void deleteContact(ArrayList<PersonDetail> contactDetails) {
         System.out.println("Enter The Name");
         String data = scanDetails.nextLine();
-        for (int i = 0; i < contatctDetails.size(); i++) {
-            if (contatctDetails.get(i).getFirstName().equals(data)) {
-                contatctDetails.remove(i);
-
+        for (int i = 0; i < contactDetails.size(); i++) {
+            if (contactDetails.get(i).getFirstName().equals(data)) {
+                contactDetails.remove(i);
             } else
                 System.out.println("not match any details");
         }
+    }
+
+    // Ignore Duplicate method when added details.
+    public boolean duplicateDetailsRemove(ArrayList<PersonDetail> addNewDetails, String firstName) {
+        boolean result = addNewDetails.stream().filter(personDetail -> personDetail.getFirstName().equals(firstName)).findFirst().isPresent();
+        return result;
     }
 }

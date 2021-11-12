@@ -1,5 +1,6 @@
 package com.company;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Hashtable;
@@ -7,9 +8,9 @@ import java.util.Scanner;
 
 public class AddressBookMain {
     public static Scanner scanner = new Scanner(System.in);
-    static Dictionary dictionary = new Hashtable();
     static Hashtable<Integer, ArrayList<PersonDetail>> hashTable = new Hashtable<>();
     static int choice;
+    static AddDetails addPersonDetail = new AddDetails();
 
     public static int choice() {
         // Print the value to choice.
@@ -26,7 +27,7 @@ public class AddressBookMain {
         return integerInput;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Use HashTable to add Multiple AddressBook in Dictionary.
         System.out.println("Enter The Number of add Multiple AddressBook");
         int numberOfAddressBook = inputInteger();
@@ -43,6 +44,7 @@ public class AddressBookMain {
                     choice = choice();
                 // Used to switch case to easily add details, edit details and delete details.
                 switch (choice) {
+
                     case 1:
                         System.out.println("Enter First Name: ");
                         String firstName = scanner.next();
@@ -62,7 +64,13 @@ public class AddressBookMain {
                         String email = scanner.next();
                         PersonDetail personDetail = new PersonDetail(firstName, lastName, address, city, state, zipCode,
                                 phoneNumber, email);
-                        contact.add(personDetail);
+                        boolean addNewEntry = addPersonDetail.duplicateDetailsRemove(contact,firstName);
+                        System.out.println(contact);
+                        System.out.println("The value is " + " " + addNewEntry);
+                        if (!addNewEntry)
+                            contact.add(personDetail);
+                        else
+                            System.out.println("Finally Duplicate Entry Remove");
                         break;
 
                     case 2:
