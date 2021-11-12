@@ -143,7 +143,7 @@ public class AddDetails {
 
     public static void writeToFile(Hashtable<Integer, ArrayList<PersonDetail>> writeDetails) {
         try {
-            FileWriter fileWriter = new FileWriter("readwritefileio.txt");
+            FileWriter fileWriter = new FileWriter("addressBook.csv");
             String stream = String.valueOf(writeDetails);
             fileWriter.write(stream);
             fileWriter.close();
@@ -154,7 +154,7 @@ public class AddDetails {
 
     public static void readFromFile() {
         try {
-            FileReader fileReader = new FileReader("readwritefileio.txt");
+            FileReader fileReader = new FileReader("addressBook.csv");
             int i;
             while ((i = fileReader.read()) != -1) {
                 System.out.print((char) i);
