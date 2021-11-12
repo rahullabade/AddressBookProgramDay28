@@ -1,7 +1,6 @@
 package com.company;
 
 public class PersonDetail {
-
     private String firstName;
     private String lastName;
     private String address;
@@ -92,5 +91,4 @@ public class PersonDetail {
                 + ", state=" + state + ", zipCode=" + zipCode + ", phoneNumber=" + phoneNumber + ", email=" + email
                 + "]";
     }
-
 }
