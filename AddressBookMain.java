@@ -2,7 +2,6 @@ package com.company;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.Scanner;
 
@@ -64,7 +63,7 @@ public class AddressBookMain {
                         String email = scanner.next();
                         PersonDetail personDetail = new PersonDetail(firstName, lastName, address, city, state, zipCode,
                                 phoneNumber, email);
-                        boolean addNewEntry = addPersonDetail.duplicateDetailsRemove(contact,firstName);
+                        boolean addNewEntry = addPersonDetail.duplicateDetailsRemove(contact, firstName);
                         System.out.println(contact);
                         System.out.println("The value is " + " " + addNewEntry);
                         if (!addNewEntry)
@@ -94,6 +93,7 @@ public class AddressBookMain {
             System.out.println("address book " + i);
             System.out.println(hashTable.get(i));
         }
+        addPersonDetail.searchDetails(hashTable);
         {
             System.out.println("Goodbye!");
             System.out.println();
